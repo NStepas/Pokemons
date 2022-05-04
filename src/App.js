@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState} from 'react';
+import './App.scss';
+import CardsContainer from './components/CardsContainer'
 
-function App() {
+
+const App = () => {
+const [pokemonsCards, setPokemonsCards] = useState();
+  
+const PokemonsCallBack = (pokemonsC) => {
+  setPokemonsCards({pokemonsC})
+}
+console.log(pokemonsCards)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="main-container"> 
+      <div className="title-container">
+        <h1>PokeDex</h1>
+      </div> 
+      <div className="menu-container"></div>
+      <CardsContainer className="card-container" CallBack={PokemonsCallBack}>{console.log(PokemonsCallBack)}</CardsContainer>
+      <div className="load-more-container"></div>
     </div>
   );
 }
