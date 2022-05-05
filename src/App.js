@@ -1,5 +1,6 @@
 import CardsContainer from './components/CardContainer/CardsContainer'
 import './App.scss';
+import { useState } from 'react';
 
 const App = () =>  (
     <div className="main-container"> 

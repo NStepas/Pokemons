@@ -14,6 +14,7 @@ const CardsContainer = () => {
         setLoading(false);
     }
     console.log(pokemons)
+    
     useEffect(() => {
         onMount();
     }, []);
