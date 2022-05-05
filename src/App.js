@@ -1,26 +1,13 @@
-import { useState} from 'react';
+import CardsContainer from './components/CardContainer/CardsContainer'
 import './App.scss';
-import CardsContainer from './components/CardsContainer'
 
-
-const App = () => {
-const [pokemonsCards, setPokemonsCards] = useState();
-  
-const PokemonsCallBack = (pokemonsC) => {
-  setPokemonsCards({pokemonsC})
-}
-console.log(pokemonsCards)
-
-  return (
+const App = () =>  (
     <div className="main-container"> 
       <div className="title-container">
         <h1>PokeDex</h1>
       </div> 
       <div className="menu-container"></div>
-      <CardsContainer className="card-container" CallBack={PokemonsCallBack}>{console.log(PokemonsCallBack)}</CardsContainer>
-      <div className="load-more-container"></div>
+      <CardsContainer />
     </div>
   );
-}
-
 export default App;
