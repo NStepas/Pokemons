@@ -1,22 +1,39 @@
-.card{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    position: relative;
-    .pokemon-card {
-        display: flex;
-        background-color: rgb(131, 138, 138);
-        flex-direction: column;
-        width: 20vh;
-        height: 25vh;
-        margin: 5px;
-    .pokemon-name-container {
-        flex-direction: column;
-        margin: auto;
-        
-    }
-    button {
+.card {
+   display: flex;
+   justify-content: space-between;
+   flex-direction: row;
+   position: relative;
+   .pokemon-card {
+      display: flex;
+      background-color: rgb(131, 138, 138);
+      flex-direction: column;
+      width: 20vh;
+      height: 25vh;
+      margin: 5px;
+      .pokemon-name-container {
+         flex-direction: column;
          margin: auto;
-    }
-    }
+         font-size: large;
+         display: flex;
+
+         //doesn`t work
+
+         &::first-letter {
+            text-transform: uppercase;
+         }
+      }
+      .pokemon-info {
+         height: 111px;
+         display: flex;
+         justify-content: center;
+      }
+      button {
+         margin: auto;
+         border-radius: 10px;
+      }
+   }
+   img {
+      height: 111px;
+      width: 111px;
+   }
 }

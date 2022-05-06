@@ -1,14 +1,13 @@
-
-const AllPokemonInfo = () => {
-    // const {pokInfo} = props;
+import './AllPokemonInfo.scss'
+const AllPokemonInfo = (props) => {
+const {type} = props;
 
     return (
-        <div>
-            <div className="type-of-pokemon">{
-        //    pokInfo.map((info)=>
-        //    {<li>{info.type}</li>})
-            }</div>
+    <div>
+        <div className="type-of-pokemon">{type}
         </div>
+    </div>
+            
     )
 }
 
