@@ -1,14 +1,12 @@
-import CardsContainer from './components/CardContainer/CardsContainer'
-import './App.scss';
-import { useState } from 'react';
+import CardsList from './components/CardsList/CardsList';
 
-const App = () =>  (
-    <div className="main-container"> 
-      <div className="title-container">
-        <h1>PokeDex</h1>
-      </div> 
-      <div className="menu-container"></div>
-      <CardsContainer />
-    </div>
-  );
+import './App.scss';
+
+const App = () => (
+   <div className="main-container">
+      <header className="title">PokeDex</header>
+      <div className="menu"></div>
+      <CardsList />
+   </div>
+);
 export default App;

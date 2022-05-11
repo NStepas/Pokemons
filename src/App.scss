@@ -1,57 +1,74 @@
-@mixin h1Title ($translate, $color, $height, $transition) {
-  transform: $translate;
-  border-color: $color;
-  height: $height;
-  transition: $transition;
+// TODO separate colors to constant scss file
+%colors {
+   background-color: black;
+   color: #bbada9;
 }
 
-%h1Tit {
-  box-sizing: border-box;
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 99.5%;
-  height: 5px;
-  border-bottom: 4px solid rgb(114, 13, 13);
-  border-left: 4px solid rgb(114, 13, 13);
-  border-radius: 25px;
+@mixin title($translate, $color, $height, $transition) {
+   transform: $translate;
+   border-color: $color;
+   height: $height;
+   transition: $transition;
+}
+
+%title {
+   box-sizing: border-box;
+   content: '';
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   width: 99.5%;
+   height: 5px;
+   border-bottom: 4px solid rgb(114, 13, 13);
+   border-left: 4px solid rgb(114, 13, 13);
+   border-radius: 25px;
 }
 
 .main-container {
-  font-family: 'Courier New', Courier, monospace;
- 
-.title-container {
-  display: flex;
-  background-color: black;
-  color: #bbada9;
-  width: 100%;
-  height: 10vh;
-  justify-content: center;
-  align-items: center;
+   font-family: 'Courier New', Courier, monospace;
 
-  h1 {
-    position: relative;
-    margin: 0.2px;
-    padding: 0.625rem 1.25rem;
-    text-transform: uppercase;
-    overflow: hidden;
-    &:before {
-      transform: translateY(100%);
-      @extend %h1Tit;
-    }
-    &:after{
-      transform: translateX(-100%);
-      @extend %h1Tit;
-    }
-    &:hover {
-      &:hover:before {
-        @include h1Title(translateY(0), #bbada9, 100%, (0.2s transform linear 0.7s, 0.1s width linear 0.1s));
+   .title-container {
+      display: flex;
+      @extend %colors;
+      width: 100%;
+      height: 10vh;
+      justify-content: center;
+      align-items: center;
+
+      h1 {
+         position: relative;
+         margin: 1px;
+         // TODO don`t use relative for padding
+         padding: 0.625rem 1.25rem;
+         text-transform: uppercase;
+         // ?
+         overflow: hidden;
+         &:before {
+            transform: translateY(100%);
+            @extend %title;
+         }
+         &:after {
+            transform: translateX(-100%);
+            @extend %title;
+         }
+         &:hover {
+            &:hover:before {
+               @include title(
+                  translateY(0),
+                  #bbada9,
+                  100%,
+                  (0.2s transform linear 0.7s, 0.1s width linear 0.1s)
+               );
+            }
+            &:hover:after {
+               @include title(
+                  translateY(0),
+                  #bbada9,
+                  0%,
+                  (0.2s transform linear 0.7s, 0.1s width linear 0.1s)
+               );
+            }
+         }
       }
-      &:hover:after {
-        @include h1Title(translateY(0), #bbada9, 0%, (0.2s transform linear 0.7s, 0.1s width linear 0.1s));
-      }
-    }
-  }
-}
+   }
 }
