@@ -1,0 +1,39 @@
+.card-container {
+   width: 20vh;
+   height: 25vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   flex-wrap: wrap;
+   margin: 10px;
+   border: black solid;
+
+   title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin: auto;
+      font-size: large;
+      display: flex;
+      text-transform: capitalize;
+   }
+   .pokemon-in {
+      height: 111px;
+      display: flex;
+      position: absolute;
+      justify-content: center;
+   }
+   .pokemon-img {
+      height: 111px;
+      width: 111px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+   .card-button {
+      margin: auto;
+      border-radius: 10px;
+   }
+}
